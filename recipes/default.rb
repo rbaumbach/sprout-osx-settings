@@ -8,6 +8,8 @@ include_recipe "sprout-osx-settings::keyboard"
 
 ## Not Currently being used ##
 
+#include_recipe "sprout-osx-settings::sshd_on"
+
 #include_recipe "sprout-osx-settings::defaults_fast_key_repeat_rate"
 #include_recipe "sprout-osx-settings::function_keys"
 #include_recipe "sprout-osx-settings::global_environment_variables"
