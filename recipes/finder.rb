@@ -40,3 +40,7 @@ end
 execute "restart finder" do
   command "killall Finder"
 end
+
+execute "restart menu bar" do
+  command "killall SystemUIServer"
+end

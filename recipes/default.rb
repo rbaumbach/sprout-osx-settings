@@ -4,6 +4,7 @@ include_recipe "sprout-osx-settings::timemachine"
 include_recipe "sprout-osx-settings::safari"
 include_recipe "sprout-osx-settings::finder"
 include_recipe "sprout-osx-settings::terminal"
+include_recipe "sprout-osx-settings::keyboard"
 
 ## Not Currently being used ##
 
