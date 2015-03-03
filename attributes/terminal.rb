@@ -1,3 +1,3 @@
-node.default['sprout']['terminal'] = = {
+node.default['sprout']['terminal'] = {
   'color_scheme' => 'Pro'
 }

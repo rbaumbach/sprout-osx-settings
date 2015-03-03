@@ -1,3 +1,4 @@
+include_recipe "sprout-osx-settings::dock"
 include_recipe "sprout-osx-settings::screensaver"
 #include_recipe "sprout-osx-settings::timemachine"
 include_recipe "sprout-osx-settings::safari"
