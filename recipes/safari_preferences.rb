@@ -1,11 +1,8 @@
-osx_defaults "set safari to show status bar" do
-  domain 'com.apple.safari'
-  key 'ShowStatusBar'
-  boolean node['safari_preferences']['show_status_bar']
-end
+prefs = node['sprout']['safari_preferences']
 
-osx_defaults "delete to navigate back" do
-  domain 'com.apple.safari'
-  key 'com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled'
-  boolean node['safari_preferences']['delete_navigate_back']
+osx_defaults "set safari to show status bar to #{prefs['show_status_bar']}" do
+  domain 'com.apple.screensaver'
+  key 'ShowStatusBar'
+  string prefs['show_status_bar']
+  only_if { prefs['show_status_bar'] }
 end

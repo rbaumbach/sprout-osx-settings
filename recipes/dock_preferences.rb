@@ -14,11 +14,11 @@ osx_defaults "set dock autohide to #{prefs['autohide']}" do
   only_if { prefs.keys.include?('auto_hide') }
 end
 
-osx_defaults 'remove persistent apps from the dock' do
+osx_defaults "set dock minimize effect to #{prefs['min_effect']}" do
   domain 'com.apple.dock'
-  key 'persistent-apps'
-  array []
-  only_if { prefs['clear_apps'] }
+  key 'mineffect'
+  boolean prefs['min_effect']
+  only_if { prefs.keys.include?('min_effect') }
 end
 
 osx_defaults "adjusts dock size to #{prefs['tile_size']}" do
@@ -27,24 +27,3 @@ osx_defaults "adjusts dock size to #{prefs['tile_size']}" do
   integer prefs['tile_size']
   only_if { prefs['tile_size'] }
 end
-
-osx_defaults "adjusts dock size to #{prefs['largesize']}" do
-  domain 'com.apple.dock'
-  key 'largesize'
-  integer prefs['largesize']
-  only_if { prefs['largesize'] }
-end
-
-osx_defaults 'toggle dock magnification on/off' do
-  domain 'com.apple.dock'
-  key 'magnification'
-  boolean prefs['magnification']
-  not_if { prefs['magnification'].nil? }
-end
-
-execute 'relaunch dock' do
-  command 'killall Dock'
-  ignore_failure true
-  only_if { !prefs.empty? }
-end
-
