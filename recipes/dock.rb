@@ -28,6 +28,13 @@ osx_defaults "adjusts dock size to #{prefs['tile_size']}" do
   only_if { prefs['tile_size'] }
 end
 
+osx_defaults "sets dock apple interface type to #{prefs['apple_interface_style']}" do
+  domain 'NSGlobalDomain'
+  key 'AppleInterfaceStyle'
+  string prefs['apple_interface_style']
+  only_if { prefs['apple_interface_style'] }
+end
+
 execute "restart dock" do
   command "killall Dock"
 end

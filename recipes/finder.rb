@@ -30,9 +30,13 @@ end
 
 # Global Preferences
 
-osx_defaults "sets Apple Interface type to #{prefs['apple_interface_style']}" do
+osx_defaults "sets menu bar apple interface type to #{prefs['apple_interface_style']}" do
   domain '.GlobalPreferences'
-  key 'ShowRemovableMediaOnDesktop'
+  key 'AppleInterfaceStyle'
   string prefs['apple_interface_style']
   only_if { prefs['apple_interface_style'] }
+end
+
+execute "restart finder" do
+  command "killall Finder"
 end
