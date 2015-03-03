@@ -27,3 +27,7 @@ osx_defaults "adjusts dock size to #{prefs['tile_size']}" do
   integer prefs['tile_size']
   only_if { prefs['tile_size'] }
 end
+
+execute "restart dock" do
+  command "killall Dock"
+end

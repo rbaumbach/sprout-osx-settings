@@ -21,6 +21,13 @@ osx_defaults "sets show removable media on desktop to #{prefs['show_removable_me
   only_if { prefs['show_removable_media_on_desktop'] }
 end
 
+osx_defaults "sets enable finder quit menu item to #{prefs['quit_menu_item']}" do
+  domain 'com.apple.finder'
+  key 'QuitMenuItem'
+  boolean prefs['quit_menu_item']
+  only_if { prefs['quit_menu_item'] }
+end
+
 # Global Preferences
 
 osx_defaults "sets Apple Interface type to #{prefs['apple_interface_style']}" do
