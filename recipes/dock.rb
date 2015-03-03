@@ -17,7 +17,7 @@ end
 osx_defaults "set dock minimize effect to #{prefs['min_effect']}" do
   domain 'com.apple.dock'
   key 'mineffect'
-  boolean prefs['min_effect']
+  string prefs['min_effect']
   only_if { prefs.keys.include?('min_effect') }
 end
 
