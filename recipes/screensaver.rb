@@ -3,14 +3,14 @@ prefs = node['sprout']['screensaver']
 osx_defaults "set ask for password when screen is locked to #{prefs['ask_for_password']}" do
   domain 'com.apple.screensaver'
   key 'askForPassword'
-  string prefs['ask_for_password']
+  boolean prefs['ask_for_password']
   only_if { prefs['ask_for_password'] }
 end
 
 osx_defaults "set password delay to #{prefs['ask_for_password_delay']}" do
   domain 'com.apple.screensaver'
   key 'askForPasswordDelay'
-  string prefs['ask_for_password_delay']
+  integer prefs['ask_for_password_delay']
   only_if { prefs['ask_for_password_delay'] }
 end
 

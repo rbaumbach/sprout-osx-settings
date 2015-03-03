@@ -1,4 +1,4 @@
-prefs = node['sprout']['dock_preferences']
+prefs = node['sprout']['dock']
 
 osx_defaults "set dock to be on #{prefs['orientation']}" do
   domain 'com.apple.dock'

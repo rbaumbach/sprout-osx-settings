@@ -1,8 +1,8 @@
-prefs = node['sprout']['safari_preferences']
+prefs = node['sprout']['safari']
 
 osx_defaults "set safari to show status bar to #{prefs['show_status_bar']}" do
   domain 'com.apple.screensaver'
   key 'ShowStatusBar'
-  string prefs['show_status_bar']
+  boolean prefs['show_status_bar']
   only_if { prefs['show_status_bar'] }
 end

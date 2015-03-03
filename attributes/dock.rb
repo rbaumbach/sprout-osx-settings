@@ -1,5 +1,5 @@
 # http://secrets.blacktree.com/?showapp=com.apple.dock
-node.default['sprout']['dock_preferences'] = {
+node.default['sprout']['dock'] = {
   'orientation' => 'bottom',
   'auto_hide' => true,
   'min_effect' => 'scale',

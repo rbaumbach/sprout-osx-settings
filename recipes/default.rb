@@ -1,6 +1,8 @@
 include_recipe "sprout-osx-settings::screensaver"
-include_recipe "sprout-osx-settings::timemachine"
-include_recipe "sprout-osx-settings::safari_preferences"
+#include_recipe "sprout-osx-settings::timemachine"
+include_recipe "sprout-osx-settings::safari"
+include_recipe "sprout-osx-settings::finder"
+include_recipe "sprout-osx-settings::terminal"
 
 ## Not Currently being used ##
 
